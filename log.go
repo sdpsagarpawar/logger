@@ -64,11 +64,6 @@ func (logger *Logger) Debugln(values ...interface{}) {
 	logger.debugLogger.Println(values...)
 }
 
-// Info prints an info message
-func (logger *Logger) Info(values ...interface{}) {
-	logger.infoLogger.Println(values...)
-}
-
 // Warning prints a warning message
 func (logger *Logger) Warning(values ...interface{}) {
 	logger.warningLogger.Println(values...)
@@ -142,4 +137,19 @@ func (logger *Logger) Panicf(format string, values ...interface{}) {
 // Panicln logs a panic message with a newline character and panics the application
 func (logger *Logger) Panicln(values ...interface{}) {
 	logger.errorLogger.Panicln(values...)
+}
+
+// Info prints an info message
+func (logger *Logger) Info(values ...interface{}) {
+	logger.infoLogger.Println(values...)
+}
+
+// Infof prints a formatted info message
+func (logger *Logger) Infof(format string, values ...interface{}) {
+	logger.infoLogger.Printf(format, values...)
+}
+
+// Infoln prints an info message with a newline character
+func (logger *Logger) Infoln(values ...interface{}) {
+	logger.infoLogger.Println(values...)
 }
